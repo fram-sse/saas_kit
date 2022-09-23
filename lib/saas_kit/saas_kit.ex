@@ -9,7 +9,7 @@ defmodule SaasKit do
   ## Examples
 
       iex> SaasKit.hello()
-      :world
+      "world "
 
   """
   def hello do

@@ -3,6 +3,6 @@ defmodule SaasKitTest do
   doctest SaasKit
 
   test "greets the world" do
-    assert SaasKit.hello() == :world
+    assert SaasKit.hello() == "world "
   end
 end

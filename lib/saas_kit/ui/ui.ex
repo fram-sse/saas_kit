@@ -8,11 +8,7 @@ defmodule SaasKit.UI do
     end
   end
 
-  import Phoenix.LiveView, only: [assign_new: 3]
-
-  def maybe_assign_dom_id(assigns) do
-    assigns |> assign_new(:id, fn -> set_id() end)
-  end
+  use Phoenix.Component
 
   def set_id do
     rand = :crypto.strong_rand_bytes(8)

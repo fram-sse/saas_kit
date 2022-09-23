@@ -3,21 +3,10 @@ defmodule SaasKit.LiveComponents.DataTable do
   Data tables are used to display large sets of data in a structured way
   with sorting and pagination.
   """
-  import Phoenix.LiveView
   import Phoenix.LiveView.Helpers
+  use Phoenix.Component
 
   def data_table_link(assigns) do
-    params = Map.get(assigns, :params, %{})
-    sort_by = Map.get(assigns, :sort)
-
-    assigns =
-      assigns
-      |> assign_new(:querystring, fn ->
-        opts = opts_from_params(params, sort_by)
-        "?#{querystring(params, opts)}"
-      end)
-      |> assign_new(:class, fn -> "" end)
-
     ~H"""
     <a class={@class} data-phx-link="patch" data-phx-link-state="push" href={@querystring}>
       <%= render_slot(@inner_block) %>
